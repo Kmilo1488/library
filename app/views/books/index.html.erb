@@ -1,0 +1,22 @@
+<h1> Books </h1>
+
+<table class="stack">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>view</th>
+    </tr>
+  </thead>
+  <body>
+  <% @book.each do |book| %>
+    <tr>
+      <td> <%= book.name %> </td>
+      <td> <%= link_to "info", book_path(book) %> </td>
+    </tr>
+  <% end %>
+  </body>
+</table>
+
+<%= link_to "Create book", new_book_path, class: "button" %>
+
+<%= link_to "Home", root_path, class: "button" %>

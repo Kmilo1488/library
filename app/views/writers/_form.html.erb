@@ -1,0 +1,25 @@
+<%= form_for @writer do |f| %>
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="medium-6 cell">
+          <lablel>
+            <%= f.label :name %>
+            <%= f.text_field :name %>
+          </lablel>
+          <lablel>
+            <%= f.label :birth %>
+            <%= f.number_field :birth %>
+          </lablel>
+          <lablel>
+            <%= f.label :place %>
+            <%= f.text_field :place %>
+          </lablel>
+
+          <%= f.submit form_writers, class: "button" %>
+
+          <%= link_to "Back", writers_path, class: "button" %>
+
+        </div>
+      </div>
+    </div>
+<% end %>

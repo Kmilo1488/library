@@ -1,0 +1,29 @@
+<%= form_for @book do |f| %>
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="medium-6 cell">
+          <lablel>
+            <%= f.label :name %>
+            <%= f.text_field :name %>
+          </lablel>
+          <lablel>
+            <%= f.label :year %>
+            <%= f.number_field :year %>
+          </lablel>
+          <lablel>
+            <%= f.label :editorial %>
+            <%= f.text_field :editorial %>
+          </lablel>
+          <lablel>
+            <%= f.label :writer_id %>
+            <%= f.select :writer_id, Writer.all.collect {|a| [ a.name, a.id ] } %>
+          </lablel>
+          <lablel>
+            <%= f.submit form_books, class: "button" %>
+          </lablel>
+
+          <%= link_to "Back", books_path, class: "button" %>
+        </div>
+      </div>
+    </div>
+<% end %>

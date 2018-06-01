@@ -1,0 +1,24 @@
+<h1> <%= @book.name %> </h1>
+
+<div>
+  <span>Title</span> <%= @book.name %>
+</div>
+
+<div>
+  <span>Year</span> <%= @book.year %>
+</div>
+
+<div>
+  <span>Editorial</span> <%= @book.editorial %>
+</div>
+
+<div>Writer:
+   <%= @book.writer.name if @book.writer %>
+   <%= link_to "Info", writer_path(@book.writer) if @book.writer %>
+</div>
+
+<%= link_to "Edit", edit_book_path(@book), class: "button" %>
+
+<%= link_to "Delete", @book, class: "button", method: :delete, data: { confirm: "¿Are you shure?" } %>
+
+<%= link_to "Back", books_path, class: "button" %>

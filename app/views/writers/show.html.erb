@@ -1,0 +1,30 @@
+<h1> <%= @writer.name %>
+
+<div>
+  <span>Bird</span> <%= @writer.birth %>
+</div>
+
+<div>
+  <span>Place</span> <%= @writer.place %>
+</div>
+
+<div>
+  <% if @writer.books.length == 0 %>
+        <h3>Don't Have books</h3>
+      <%else%>
+        <h3>books</h3>
+          <div>
+            <ul>
+              <% @writer.books.each_with_index do |v,i| %>
+                <li><%= link_to v.name, book_path(v)%></li>
+              <%end%>
+            </ul>
+          </div>
+      <%end%>
+</div>
+
+<%= link_to "Edit", edit_writer_path(@writer), class: "button" %>
+
+<%= link_to "Delete", @writer, class: "button", method: :delete, data: { confirm: "¿Are you shure?" } %>
+
+<%= link_to "Back", writers_path, class: "button" %>

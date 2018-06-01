@@ -1,0 +1,22 @@
+<h1> Writers </h1>
+
+<table class="stack">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>view</th>
+    </tr>
+  </thead>
+  <body>
+  <% @writers.each do |writer| %>
+    <tr>
+      <td> <%= writer.name %> </td>
+      <td> <%= link_to "info", writer_path(writer) %> </td>
+    </tr>
+  <% end %>
+  </body>
+</table>
+
+
+<%= link_to "Create writer", new_writer_path, class: "button" %>
+<%= link_to "Home", root_path, class: "button" %>
